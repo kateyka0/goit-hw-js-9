@@ -5,37 +5,38 @@ body {
   margin-right: 156px;
   padding: 0;
 }
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  outline: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
 
 .gallery {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
-  list-style: none;
-  padding: 24px;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  background-color: #ffffff;
 }
 
 .gallery-item {
-    flex: calc(33% - 24px);
-  overflow: hidden;
-
+  position: relative;
+  width: calc((100% - 48px) / 3);
+  max-width: 360px;
+  transition: transform ease-in-out 500ms;
 }
-
-.gallery-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-}
-
-.gallery-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-  transform: scale(1.1);
+.gallery-item:hover,
+.gallery-item:focus-within {
+  z-index: 22;
+  transform: scale(1.04);
 }
